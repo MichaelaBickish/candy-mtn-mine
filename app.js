@@ -1,5 +1,6 @@
 let candycount = 0
-let extracount = 0
+let clickMod = 0
+let autoMod = 0
 
 
     let clickUpgrades= {
@@ -10,7 +11,7 @@ let extracount = 0
         multiplier: 2
     },
     candyAxe: {
-        price: 5,
+        price: 50,
         quantity: 0,
         multiplier: 2
     }
@@ -32,18 +33,16 @@ let autoUpgrades = {
 
 function mine(item) {
  candycount += 1
+ candycount += clickMod
 
-// let upgrade = clickUpgrades[action]
-//    if (candycount >= upgrade.price){
-//    }
+// if statement to update extracount for sugar rush and candy axe
 
 updateCount()
 }
 
 function updateCount() {
-    let template = ''
-    template += `<h4 class="text-center">Candy Count: ${candycount}</h4>`
-    document.getElementById('current-count').innerHTML = template
+    document.getElementById('current-count').innerText = `Candy Count: ` + `${candycount}`
+    
 }
 
 
@@ -54,38 +53,63 @@ function buySugar(item) {
     if (candycount >= candy.price) {
          candy.quantity += 1
          candycount -= candy.price
+         candy.price *= candy.multiplier
+         clickMod += 1
          console.log("sugrush")
     }
-    template += ` ${candy.quantity}`
+    template += `Sugar Rush's Collected: ${candy.quantity} Current Sugar Rush Price: ${candy.price}`
     document.getElementById('sugrush').innerText = template
     
 updateCount()
 }
 function buyAxe(item) {
-    let candy = clickUpgrades[item]
+    let axe = clickUpgrades[item]
     template = ''
-    if (candycount >= candy.price) {
-         candy.quantity += 1
-         candycount -= candy.price
+    if (candycount >= axe.price) {
+         axe.quantity += 1
+         candycount -= axe.price
+         clickMod += 3
          console.log("axe")
     }
-    template += ` ${candy.quantity}`
+    template += ` ${axe.quantity}`
     document.getElementById('candaxe').innerText = template
+updateCount()
 }
 function buyCandyCart(item) {
-    let upgrade = autoUpgrades[item]
+    let cCart = autoUpgrades[item]
     template = ''
-    if (candycount >= upgrade.price) {
-         upgrade.quantity += 1
-         candycount -= upgrade.price
+    if (candycount >= cCart.price) {
+         cCart.quantity += 1
+         candycount -= cCart.price
          console.log("candy cart")
     }
-    template += ` ${upgrade.quantity}`
+    template += ` ${cCart.quantity}`
     document.getElementById('candcart').innerText = template
+updateCount()
 }
+function buyKingCandy(item){
+    let kCandy = autoUpgrades[item]
+    template = ''
+    if (candycount >= kCandy.price) {
+         kCandy.quantity += 1
+         candycount -= kCandy.price
+         console.log("king candy")
+    }
+    template += ` ${kCandy.quantity}`
+    document.getElementById('kingcand').innerText = template
+updateCount()
+}
+
+function startInterval() {
+    collectionInterval = setInterval(collectAutoUpgrades, 3000);
+    console.log(working)
+  }
 
 //collectAutoUpgrades() {
 
 //}
 
+
 updateCount()
+startInterval()
+buySugar(sugarRush)
