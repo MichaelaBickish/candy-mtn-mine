@@ -36,7 +36,9 @@ footer {
     -webkit-transform: scale(0.95);
     -ms-transform: scale(0.95);
     transform: scale(0.95);
-    transition: 1s ease;
+    transition: .5s ease;
     }
-
+.no-select {
+    user-select: none;
+}
 

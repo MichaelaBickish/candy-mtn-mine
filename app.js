@@ -24,7 +24,7 @@ let autoUpgrades = {
     kingCandy: {
         price: 150,
         quantity: 0,
-        multiplier: 3
+        multiplier: 2
     }
 }
 
@@ -54,7 +54,7 @@ function buySugar(item) {
          candy.quantity += 1
          candycount -= candy.price
          candy.price *= candy.multiplier
-         clickMod += 1
+         clickMod += 500
     }else{
         alert(`you don't have enough candy to purchase a SUGAR RUSH!`)
     }
@@ -68,7 +68,7 @@ function buyAxe(item) {
          axe.quantity += 1
          candycount -= axe.price
          axe.price *= axe.multiplier
-         clickMod += 3
+         clickMod += 1000
     }else{
         alert(`you don't have enough candy to purchase a CANDY AXE!`)
     }
@@ -81,7 +81,7 @@ function buyCandyCart(item) {
          cCart.quantity += 1
          candycount -= cCart.price
          cCart.price *= cCart.multiplier
-         autoMod += 250
+         autoMod += 500
     }else {
         alert(`you don't have enough candy to purchase a CANDY CART!`)
     }
@@ -94,7 +94,7 @@ function buyKingCandy(item){
          kCandy.quantity += 1
          candycount -= kCandy.price
          kCandy.price *= kCandy.multiplier
-         autoMod += 450
+         autoMod += 1000
     }else {
         alert(`you don't have enough candy to purchase a MINER from King Candy!`)
     }

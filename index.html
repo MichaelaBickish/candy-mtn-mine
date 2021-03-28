@@ -21,20 +21,19 @@
 
     <main class="container">
         <div class="row">
-            <div class="col-12 col-md-6 d-flex justify-content-center shrink">
-                <img src="https://www.awn.com/sites/default/files/styles/inline/public/image/attached/52613-sugarrush-620.jpg?itok=xQauq0NH" class="img-fluid my-2 shadow rounded" onclick="mine()" alt="Candy Mountain">
-                
+            <div class="col-12 col-md-6 shrink no-select">
+                <img src="https://media1.popsugar-assets.com/files/thumbor/JD_ev_o8L4Fntftdiu-tygZmT5U/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2012/09/39/2/192/1922283/f284f0c000c359b3_Sugar_Rush_Diet_Cola_Mountain/i/Here-panoramic-view-Sugar-Rush.jpg" class="img-fluid my-2 shadow rounded d-flex justify-content-center" onclick="mine()" alt="Candy Mountain">
             </div>
         </div> 
-        <div class="row">
+        <div class="row no-select">
             <div class="col-12"><h3 id="current-count" class="text-center"></h3></div>
         </div>
-        <div class="row bg-light">
+        <div class="row bg-light no-select">
             <div class="col-12 col-md-6 text-center"><h5 id="click-power"></h5></div>
             <div class="col-12 col-md-6 text-center"><h5 id="autoclick-power"></h5></div>
         </div>
 
-        <div class="row">
+        <div class="row no-select">
             <div class="col text-center click-upg-header"><h5 class="mt-1 mb-0">CLICK UPGRADES</h5><p class="font-italic my-0">increase your click power!</p></div>
         </div>
 
@@ -43,7 +42,7 @@
                     <button class="btn btn-outline-primary text-danger" onclick="buySugar('sugarRush')">Buy 1 SUGAR RUSH</button>
                 </div> 
                 <div class="col-12 col-md-3 d-flex justify-content-center">
-                    <p class="font-italic m-0">Sugar rushes add +1 click power, each</p>
+                    <p class="font-italic m-0">Sugar rushes add +500 click power, each</p>
                 </div>
                 <div class="col-6 col-md-3 text-center text-danger">
                     <div id="sugrush-price"></div>
@@ -54,12 +53,12 @@
                 
         </div>
 
-        <div class="row upg-2">
+        <div class="row upg-2 bg-light">
             <div class="col-12 col-md-3 click-upg d-flex justify-content-center">
                 <button class="btn btn-outline-primary" onclick="buyAxe('candyAxe')">Buy 1 CANDY AXE</button> 
             </div> 
             <div class="col-12 col-md-3 d-flex justify-content-center">
-                <p class="font-italic m-0">Candy axes add +3 click power, each</p>    
+                <p class="font-italic m-0">Candy axes add +1000 click power, each</p>    
             </div>
             <div class="col-6 col-md-3 text-center text-danger">
                 <div id="candyaxe-price"></div>
@@ -70,7 +69,7 @@
                
         </div>
 
-        <div class="row auto-upg-header">
+        <div class="row auto-upg-header no-select">
             <div class="col text-center"><h5 class="mt-1 mb-0">AUTO UPGRADES</h5><p class="font-italic my-0">collects candy for you every 3 seconds!</p></div>
         </div>
 
@@ -79,7 +78,7 @@
                 <button class="btn btn-outline-success" onclick="buyCandyCart('candyCart')">Hire 1 CANDY CART</button> 
             </div> 
             <div class="col-12 col-md-3 d-flex justify-content-center">
-                <p class="font-italic m-0">Candy carts auto collect +250 candy, each</p>    
+                <p class="font-italic m-0">Candy carts auto collect +500 candy, each</p>    
             </div>
             <div class="col-6 col-md-3 text-center text-danger">
                 <div id="candycart-price"></div>
@@ -90,12 +89,12 @@
                
         </div>
 
-        <div class="row upg-4">
+        <div class="row upg-4 bg-light">
             <div class="col-12 col-md-3 click-upg d-flex justify-content-center">
                 <button class="btn btn-outline-success" onclick="buyKingCandy('kingCandy')">Hire 1 MINER</button> 
             </div> 
             <div class="col-12 col-md-3 d-flex justify-content-center">
-                <p class="font-italic m-0">King Candy's miners auto collect +450 candy, each</p>    
+                <p class="font-italic m-0">King Candy's miners auto collect +1000 candy, each</p>    
             </div>
             <div class="col-6 col-md-3 text-center">
                 <div id="kingcandy-price" class="text-danger text-center"></div>
