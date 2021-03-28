@@ -3,7 +3,40 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+header {
+    background-color: #fe90cd;
+}
 main {
     flex-grow: 1;
+    
 }
+footer {
+    background-color: #fe90cd;
+}
+
+#current-count {
+    color: #fe90cd;
+}
+.click-upg-header {
+    background-color: #c7f3d1;
+}
+
+.auto-upg-header {
+    background-color: #c7f3d1;
+}
+
+
+
+
+.shrink img {
+    transition: 1s ease;
+    }
+    
+.shrink img:hover{
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    transition: 1s ease;
+    }
+
+

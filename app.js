@@ -2,7 +2,6 @@ let candycount = 0
 let clickMod = 0
 let autoMod = 0
 
-
     let clickUpgrades= {
 
     sugarRush: {
@@ -13,103 +12,106 @@ let autoMod = 0
     candyAxe: {
         price: 50,
         quantity: 0,
-        multiplier: 2
+        multiplier: 3
     }
 }
-
 let autoUpgrades = {
     candyCart: {
-        price: 5,
+        price: 150,
         quantity: 0,
-        multiplier: 2
+        multiplier: 5
     },
     kingCandy: {
-        price: 5,
+        price: 200,
         quantity: 0,
-        multiplier: 2
+        multiplier: 5
     }
 }
-
 
 function mine(item) {
  candycount += 1
  candycount += clickMod
-
-// if statement to update extracount for sugar rush and candy axe
-
+ 
 updateCount()
 }
-
 function updateCount() {
     document.getElementById('current-count').innerText = `Candy Count: ` + `${candycount}`
+    document.getElementById('click-power').innerText = `+${clickMod} ` + `Xtra Click Power`
+    document.getElementById('autoclick-power').innerText = `+${autoMod} ` + `Auto Collect Power`    
+    document.getElementById('sugrush-quan').innerText = `${clickUpgrades.sugarRush.quantity}` + ` Collected` 
+    document.getElementById('sugrush-price').innerText = `Cost: ` + `${clickUpgrades.sugarRush.price} Candy`
+    document.getElementById('candyaxe-quan').innerText = `${clickUpgrades.candyAxe.quantity}` + ` Collected`
+    document.getElementById('candyaxe-price').innerText = `Cost: ` + `${clickUpgrades.candyAxe.price} Candy`
+    document.getElementById('candycart-quan').innerText = `${autoUpgrades.candyCart.quantity}` + ` at Work`
+    document.getElementById('candycart-price').innerText = `Cost: ` + `${autoUpgrades.candyCart.price} Candy`
+    document.getElementById('kingcandy-quan').innerText = `${autoUpgrades.kingCandy.quantity}` + ` at Work`
+    document.getElementById('kingcandy-price').innerText = `Cost: ` + `${autoUpgrades.kingCandy.price} Candy`
     
 }
-
-
-//check if the user has the resources, if they do, increase the purchased count & decrease the candycount
 function buySugar(item) {
     let candy = clickUpgrades[item]
-    template = ''
     if (candycount >= candy.price) {
          candy.quantity += 1
          candycount -= candy.price
          candy.price *= candy.multiplier
          clickMod += 1
-         console.log("sugrush")
+    }else{
+        alert(`you don't have enough candy to purchase a SUGAR RUSH!`)
     }
-    template += `Sugar Rush's Collected: ${candy.quantity} Current Sugar Rush Price: ${candy.price}`
-    document.getElementById('sugrush').innerText = template
     
 updateCount()
 }
 function buyAxe(item) {
     let axe = clickUpgrades[item]
-    template = ''
+    
     if (candycount >= axe.price) {
          axe.quantity += 1
          candycount -= axe.price
+         axe.price *= axe.multiplier
          clickMod += 3
-         console.log("axe")
+    }else{
+        alert(`you don't have enough candy to purchase a CANDY AXE!`)
     }
-    template += ` ${axe.quantity}`
-    document.getElementById('candaxe').innerText = template
+    
 updateCount()
 }
 function buyCandyCart(item) {
     let cCart = autoUpgrades[item]
-    template = ''
     if (candycount >= cCart.price) {
          cCart.quantity += 1
          candycount -= cCart.price
-         console.log("candy cart")
+         cCart.price *= cCart.multiplier
+         autoMod += 10
+    }else {
+        alert(`you don't have enough candy to purchase a CANDY CART!`)
     }
-    template += ` ${cCart.quantity}`
-    document.getElementById('candcart').innerText = template
 updateCount()
+collectAutoUpgrades()
 }
 function buyKingCandy(item){
     let kCandy = autoUpgrades[item]
-    template = ''
     if (candycount >= kCandy.price) {
          kCandy.quantity += 1
          candycount -= kCandy.price
-         console.log("king candy")
+         kCandy.price *= kCandy.multiplier
+         autoMod += 20
+    }else {
+        alert(`you don't have enough candy to purchase a MINER from King Candy!`)
     }
-    template += ` ${kCandy.quantity}`
-    document.getElementById('kingcand').innerText = template
 updateCount()
+collectAutoUpgrades()
+}
+
+function collectAutoUpgrades(item) {
+    candycount += autoMod
+    updateCount()
 }
 
 function startInterval() {
-    collectionInterval = setInterval(collectAutoUpgrades, 3000);
-    console.log(working)
+    setInterval(collectAutoUpgrades, 3000)
   }
-
-//collectAutoUpgrades() {
-
-//}
 
 
 updateCount()
 startInterval()
-buySugar(sugarRush)
+
