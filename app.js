@@ -12,7 +12,7 @@ let autoMod = 0
     candyAxe: {
         price: 50,
         quantity: 0,
-        multiplier: 2
+        multiplier: 3
     }
 }
 let autoUpgrades = {
@@ -24,7 +24,7 @@ let autoUpgrades = {
     kingCandy: {
         price: 150,
         quantity: 0,
-        multiplier: 2
+        multiplier: 3
     }
 }
 

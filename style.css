@@ -24,21 +24,22 @@ footer {
 .auto-upg-header {
     background-color: #c7f3d1;
 }
-
-
-
-
-.shrink img {
-    transition: 1s ease;
-    }
-    
-.shrink img:hover{
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95);
-    transition: .5s ease;
-    }
+.cost-text {
+    color: #fe90cd;
+}
+.collected-text {
+    color: #a1daae;
+}
 .no-select {
     user-select: none;
 }
+.mtn-pic:active{ 
+    background: #f883c3; 
+    box-shadow: 0 0 40px #f883c3; 
+}
 
+.but-glow:hover{
+    background: #fe90cd;
+    opacity: 0.5; 
+    box-shadow: 0 0 100px #fe90cd; 
+}
