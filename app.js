@@ -46,7 +46,6 @@ function updateCount() {
     document.getElementById('candycart-price').innerText = `Cost: ` + `${autoUpgrades.candyCart.price} Candy`
     document.getElementById('kingcandy-quan').innerText = `${autoUpgrades.kingCandy.quantity}` + ` at Work`
     document.getElementById('kingcandy-price').innerText = `Cost: ` + `${autoUpgrades.kingCandy.price} Candy`
-    myStorage = window.localStorage
     
 }
 function buySugar(item) {
